@@ -1,0 +1,26 @@
+{
+  "name": "connectinghands",
+  "version": "1.1.0",
+  "description": "system integration project",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "googlemaps": "^1.12.0",
+    "mongoose": "^5.5.2",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^2.0.0",
+    "request": "^2.88.0",
+    "util": "^0.11.1",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

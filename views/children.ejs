@@ -1,0 +1,89 @@
+<html>
+<head>
+  <% include partial/header.ejs %>
+
+  <meta charset="UTF-8">
+  <title>Connecting Hands - Children Profiles </title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/skel.min.js"></script>
+  <!-- <script src="js/skel-layers.min.js"></script> -->
+  <script src="js/init.js"></script>
+  <noscript>
+    <link rel="stylesheet" href="css/skel.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-xlarge.css" />
+  </noscript>
+  <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+</head>
+  <body>
+    <div class="container">
+
+      <header class="major">
+        <br><br>
+        <h2>Meet Our Children</h2>
+        <p>Find a child to adopt, mentor or sponsor. Every contribution matters.</p>
+      </header>
+      <%
+      var count = 0;
+      profiles.forEach((child)=>{
+        if(count == 0){
+        %>
+      <section>
+      <h4><b><%= child.name%> (<%= child.age%> Years Old)</b></h4>
+      <p><span class="image left"><img src="<%= child.img_path%>" alt="" /></span> <%= child.about%> </p>
+      <ul class="actions">
+        <li><a href="/custom_sform?ch=<%=child.name%>&img=<%=child.img_path%>" class="button small fit">Sponsor <%= child.name%> </a></li>
+        <li><a href="/custom_mform?ch=<%=child.name%>&img=<%=child.img_path%>" class="button small fit">Mentor <%= child.name%></a></li>
+        <li><a href="<%= child.org_link %>" class="button small fit">Adopt <%= child.name%></a></li>
+      </ul>
+    </section>
+      <br>
+      <%
+  count = 1;
+    }else{%>
+        <section>
+        <h4 class ="align-right"><b><%= child.name%> (<%= child.age%> Years Old)</b></h4>
+        <!-- <h4><b><%= child.name%> (<%= child.age%> Years Old)</b></h4> -->
+        <p><span class="image right"><img src="<%= child.img_path%>" alt="" /></span> <%= child.about%> </p>
+        <ul class="actions">
+          <li><a href="/custom_sform?ch=<%=child.name%>&img=<%=child.img_path%>" class="button small fit">Sponsor <%= child.name%> </a></li>
+          <li><a href="/custom_mform?ch=<%=child.name%>&img=<%=child.img_path%>" class="button small fit">Mentor <%= child.name%></a></li>
+          <li><a href="<%= child.org_link %>" class="button small fit">Adopt <%= child.name%></a></li>
+        </ul>
+      </section>
+        <br>
+      <%
+  count = 0;
+    }})%>
+<!--
+      <h4><b>Child Name Here</b></h4>
+      <p><span class="image right"><img src="images/pic09.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+      <ul class="actions">
+        <li><a href="#" class="button small fit">Sponsor child's name</a></li>
+        <li><a href="#" class="button small fit">Mentor child's name</a></li>
+      </ul>
+      <br> -->
+
+      <!-- <h4><b>Child Name Here</b></h4>
+      <p><span class="image left"><img src="images/pic09.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+      <ul class="actions">
+        <li><a href="#" class="button small fit">Sponsor child's name</a></li>
+        <li><a href="#" class="button small fit">Mentor child's name</a></li>
+      </ul>
+      <br>
+      <h4><b>Child Name Here</b></h4>
+      <p><span class="image right"><img src="images/pic09.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+      <ul class="actions">
+        <li><a href="#" class="button small fit">Sponsor child's name</a></li>
+        <li><a href="#" class="button small fit">Mentor child's name</a></li>
+      </ul> -->
+
+
+    </div>
+    <% include partial/footer.ejs %>
+  </body>
+</html>

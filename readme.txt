@@ -1,0 +1,2 @@
+-Script to populate database is in the database.txt file.
+-Childrens Data.xlsx is a sample of how we collected and stored dummy data for our database.

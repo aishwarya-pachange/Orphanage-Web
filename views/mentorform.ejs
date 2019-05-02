@@ -1,0 +1,116 @@
+<html lang="en">
+<% include partial/header.ejs %>
+	 <head>
+		<meta charset="UTF-8">
+		<title>Connecting Hands - Mentorship Form</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<!-- <script src="js/skel-layers.min.js"></script> -->
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+		<script type="text/javascript">
+			 (function(){
+					emailjs.init("user_14Dpua8aEcpuAnoycRK43");
+			 })();
+		</script>
+	<!-- </head> -->
+	<body>
+	<!-- Form -->
+	<div class="container">
+						<section>
+							<br>
+							<header class="major">
+							<h2>Mentorship Program </h2>
+							<p>We will try to match you with a child based on your location, availability and the skill you are willing to teach.</p>
+							</header>
+
+							<!-- <p>We will get back to you within 48 hours. Try to provide as much detail as possible.</p> -->
+							<form method="post" action="#">
+								<h2>Personal Information</h2>
+								<div class="row uniform 50%">
+									<div class="6u 12u$(xsmall)" >
+										<input type="text" name="name" id="name" value="" placeholder="Name*" />
+									</div>
+									<div class="6u$ 12u$(xsmall)">
+										<input type="email" name="email" id="email" value="" placeholder="Email*" />
+									</div class="6u$ 12u$(xsmall)">
+									<div class="12u$">
+										<textarea name="street" id="street" placeholder="Street Address" rows="1"></textarea>
+									</div>
+									<div class="6u 12u$(small)" >
+										<input type="text" name="city" id="city" value="" placeholder="City*" />
+									</div>
+									<div class="6u">
+										<div class="select-wrapper">
+											<select name="purpose" id="state">
+												<option value="">- State*</option>
+												<option value="NC">North Carolina</option>
+												<option value="SC">South Carolina</option>
+												<option value="CA">California</option>
+												<option value="TX">Texas</option>
+												<option value="NY">New York</option>
+											</select>
+										</div>
+									</div>
+										<div class="12u$">
+											<br>
+											<h2>Information regarding the program</h2>
+
+											<textarea name="availability" id="availability" placeholder="Enter the range of day(s) and times you will be available to visit the center and mentor the child.*" rows="1"></textarea>
+										</div>
+									<!-- <div class="6u$ 12u$(small)">
+										<input type="checkbox" id="human" name="human" checked>
+										<label for="human">I am a human and not a robot</label>
+									</div> -->
+									<div class="12u$">
+										<textarea name="message" id="message" placeholder="Describe briefly your skill or hobby which you would like to help teach a child and why this mentorship program interests you.*" rows="5"></textarea>
+									</div>
+									<script type="text/javascript">
+									function sendmessage(){
+									var service_id = 'priya_gmail';
+									var template_id = 'mentorship';
+									var template_params = {
+										name: document.getElementById('name').value,
+										message: document.getElementById('message').value,
+										email: document.getElementById('email').value,
+										street: document.getElementById('street').value,
+										city: document.getElementById('city').value,
+										state: document.getElementById('state').value,
+										availability: document.getElementById('availability').value,
+										type: "Mentorship"
+
+									};
+									emailjs.send(service_id,template_id,template_params)
+									.then(function (response) {
+										console.log('SUCCESS!', response);
+										alert("Message Sent Successfully!");
+									}, function (error) {
+										console.log('FAILED...', error);
+									});
+								};
+
+									</script>
+									<div class="12u$">
+										<ul class="actions">
+											<input type="hidden" name="_confirmation" value="Sent Successfully!">
+
+											<li><input type="button" value="Send Message" class="special" onclick="sendmessage()"/></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							</form>
+						</section>
+						 <% include partial/footer.ejs %>
+
+	</body>
+</html>
